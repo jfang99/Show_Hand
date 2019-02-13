@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BDE5EDA0220E026700E7FAE8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDE5ED9F220E026700E7FAE8 /* main.cpp */; };
+		BDED9DE022138F4500EAE743 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDED9DDE22138F4500EAE743 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,8 @@
 
 /* Begin PBXFileReference section */
 		BDE5ED9C220E026700E7FAE8 /* Texas Hold'em Poker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Texas Hold'em Poker"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDE5ED9F220E026700E7FAE8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BDED9DDE22138F4500EAE743 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BDED9DE4221391D600EAE743 /* Texas Hold'em Poker */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Texas Hold'em Poker"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +42,8 @@
 		BDE5ED93220E026700E7FAE8 = {
 			isa = PBXGroup;
 			children = (
+				BDED9DE4221391D600EAE743 /* Texas Hold'em Poker */,
+				BDED9DDE22138F4500EAE743 /* main.cpp */,
 				BDE5ED9E220E026700E7FAE8 /* Texas Hold'em Poker */,
 				BDE5ED9D220E026700E7FAE8 /* Products */,
 			);
@@ -57,7 +60,6 @@
 		BDE5ED9E220E026700E7FAE8 /* Texas Hold'em Poker */ = {
 			isa = PBXGroup;
 			children = (
-				BDE5ED9F220E026700E7FAE8 /* main.cpp */,
 			);
 			path = "Texas Hold'em Poker";
 			sourceTree = "<group>";
@@ -118,7 +120,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDE5EDA0220E026700E7FAE8 /* main.cpp in Sources */,
+				BDED9DE022138F4500EAE743 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
