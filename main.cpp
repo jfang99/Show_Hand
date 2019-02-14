@@ -1,3 +1,5 @@
+//This main.cpp file is just for testing functions or operations I just learned.
+
 #include<iostream>
 #include<sstream>
 

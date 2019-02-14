@@ -11,7 +11,7 @@
 //black club /u2663
 
 //Note to myself: white heart is red heart in the common sense; white diamond is red diamond
-//in the common sense.
+//in the common Poker.
 
 
 
