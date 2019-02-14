@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BDED9DE022138F4500EAE743 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDED9DDE22138F4500EAE743 /* main.cpp */; };
+		BDF3D64D221604A2004E4A89 /* Compare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D649221604A2004E4A89 /* Compare.cpp */; };
+		BDF3D64E221604A2004E4A89 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D64C221604A2004E4A89 /* Card.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +27,10 @@
 /* Begin PBXFileReference section */
 		BDE5ED9C220E026700E7FAE8 /* Texas Hold'em Poker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Texas Hold'em Poker"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED9DDE22138F4500EAE743 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		BDED9DE4221391D600EAE743 /* Texas Hold'em Poker */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Texas Hold'em Poker"; sourceTree = "<group>"; };
+		BDF3D649221604A2004E4A89 /* Compare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compare.cpp; sourceTree = "<group>"; };
+		BDF3D64A221604A2004E4A89 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		BDF3D64B221604A2004E4A89 /* Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compare.h; sourceTree = "<group>"; };
+		BDF3D64C221604A2004E4A89 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,9 +47,8 @@
 		BDE5ED93220E026700E7FAE8 = {
 			isa = PBXGroup;
 			children = (
-				BDED9DE4221391D600EAE743 /* Texas Hold'em Poker */,
+				BDF3D648221604A2004E4A89 /* Texas_Hold'em_Poker */,
 				BDED9DDE22138F4500EAE743 /* main.cpp */,
-				BDE5ED9E220E026700E7FAE8 /* Texas Hold'em Poker */,
 				BDE5ED9D220E026700E7FAE8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,11 +61,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BDE5ED9E220E026700E7FAE8 /* Texas Hold'em Poker */ = {
+		BDF3D648221604A2004E4A89 /* Texas_Hold'em_Poker */ = {
 			isa = PBXGroup;
 			children = (
+				BDF3D649221604A2004E4A89 /* Compare.cpp */,
+				BDF3D64A221604A2004E4A89 /* Card.h */,
+				BDF3D64B221604A2004E4A89 /* Compare.h */,
+				BDF3D64C221604A2004E4A89 /* Card.cpp */,
 			);
-			path = "Texas Hold'em Poker";
+			path = "Texas_Hold'em_Poker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF3D64E221604A2004E4A89 /* Card.cpp in Sources */,
 				BDED9DE022138F4500EAE743 /* main.cpp in Sources */,
+				BDF3D64D221604A2004E4A89 /* Compare.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
