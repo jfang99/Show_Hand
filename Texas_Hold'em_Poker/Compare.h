@@ -17,10 +17,11 @@ bool Compare(const vector<Card>& card1, const vector<Card>& card2);
 
 //helper function for Compare
 //This function helps me turn sets of cards into integers. Then I can compare the integers to determine who should
-int transf_cards_to_int(const vector<Card>& cards);
+int transf_cards_to_int( vector<Card> cards);
 
 bool check_sequence(vector<Card>& cards);
 
+vector<Card> get_sequence(vector<Card> cards);
 //int find_min(const vector<Card>& cards);
 
 bool find(const vector<Card>& cards, int target);
