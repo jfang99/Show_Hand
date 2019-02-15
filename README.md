@@ -22,4 +22,7 @@ Remember that the small blind and big blind move to right at each turn.
 
 
 # I plan to first write the algorithm with command line at the beginning. 
-[Link to my Command line folder](./Texas Hold'em Poker/)
+[Link to my Command line folder](./Texas_Hold'em_Poker/)
+
+# This file contains all my learning process records.
+[Link to my learning process records](Texas_Hold'em_Poker/readme.md/)
