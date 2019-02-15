@@ -23,17 +23,18 @@ using namespace std;
 
 
 class Card{
-public:
     //the fields:
-    //(I put all fields in the public section, I will consult TA to see if it has any significant downsides)
+private:
     string color;
     int number;
+public:
     //the member functions:
     //Constructors:
     Card();
     Card(string ccolor, int cnumber);
-    
-    
+    string get_color() const;
+    int get_number() const;
+    void set_number(int a);
 };
 
 

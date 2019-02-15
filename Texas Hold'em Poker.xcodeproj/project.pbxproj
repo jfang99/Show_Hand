@@ -10,6 +10,7 @@
 		BDED9DE022138F4500EAE743 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDED9DDE22138F4500EAE743 /* main.cpp */; };
 		BDF3D64D221604A2004E4A89 /* Compare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D649221604A2004E4A89 /* Compare.cpp */; };
 		BDF3D64E221604A2004E4A89 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D64C221604A2004E4A89 /* Card.cpp */; };
+		BDF3D6512216084B004E4A89 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D64F2216084B004E4A89 /* Person.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		BDF3D64A221604A2004E4A89 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		BDF3D64B221604A2004E4A89 /* Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compare.h; sourceTree = "<group>"; };
 		BDF3D64C221604A2004E4A89 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		BDF3D64F2216084B004E4A89 /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
+		BDF3D65222160878004E4A89 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				BDF3D649221604A2004E4A89 /* Compare.cpp */,
-				BDF3D64A221604A2004E4A89 /* Card.h */,
 				BDF3D64B221604A2004E4A89 /* Compare.h */,
+				BDF3D64A221604A2004E4A89 /* Card.h */,
 				BDF3D64C221604A2004E4A89 /* Card.cpp */,
+				BDF3D65222160878004E4A89 /* Person.h */,
+				BDF3D64F2216084B004E4A89 /* Person.cpp */,
 			);
 			path = "Texas_Hold'em_Poker";
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			files = (
 				BDF3D64E221604A2004E4A89 /* Card.cpp in Sources */,
 				BDED9DE022138F4500EAE743 /* main.cpp in Sources */,
+				BDF3D6512216084B004E4A89 /* Person.cpp in Sources */,
 				BDF3D64D221604A2004E4A89 /* Compare.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

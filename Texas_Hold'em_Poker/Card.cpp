@@ -10,16 +10,24 @@ Card::Card(){
 Card::Card(string ccolor, int cnumber){
     color=ccolor;
     number=cnumber;
+   
 }
 
+string Card::get_color() const{
+    return color;
+}
 
+int Card::get_number() const{
+    return number;
+}
 
-
-
+void Card::set_number(int a){
+    number=a;
+}
 
 //Non-member functions:
 ostream& operator<<(ostream& out, const Card& card){
-out<<"Color:"<<card.color<<endl;
-out<<"Number:"<<card.number<<endl;
+out<<"Color:"<<card.get_color()<<endl;
+out<<"Number:"<<card.get_number()<<endl;
     return out;
 }
