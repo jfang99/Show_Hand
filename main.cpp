@@ -10,13 +10,13 @@ int main(){
     cout<<"\u2662"<<"\u2660"<<"\u2663";
     
     
-    Card card1("red",1);
-    Card card2("red",4);
-    Card card3("red",5);
-    Card card4("red",8);
-    Card card5("red",2);
-    Card card6("red",7);
-    Card card7("red",6);
+    Card card1("red","\u2661","1");
+    Card card2("red","\u2661","4");
+    Card card3("red","\u2661","5");
+    Card card4("red","\u2661","8");
+    Card card5("red","\u2661","2");
+    Card card6("red","\u2661","7");
+    Card card7("red","\u2661","6");
     
     vector<Card> cards={card1,card2,card3,card4,card5,card6,card7};
     sort_in_order(cards);

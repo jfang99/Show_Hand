@@ -2,19 +2,15 @@
 
 
 bool check_royal_flush(vector<Card> cards){
-    vector<Card> first_sequence=get_smallest_sequence(cards);
-    vector<Card> second_sequence=get_2ndlarge_sequence(cards);
-    vector<Card> third_sequence=get_largest_sequence(cards);
-    
-    if(same_colors(first_sequence)){
-        return true;
-    }
-    else if(same_colors(second_sequence)){
-        return true;
-    }
-    else if(same_colors(third_sequence)){
+    vector<Card> sequence=get_largest_sequence(cards);
+ 
+    if(same_colors(sequence)&&((sequence[0].get_number())==10)){
         return true;
     }
     
     return false;
+}
+
+bool check_straight_flush(vector<Card> cards){
+    return true;
 }

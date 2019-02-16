@@ -4,7 +4,8 @@
 using std::vector;
 
 //bool Compare(const vector<Card>& card1, const vector<Card>& card2){
-    
+  
+        
 //}
 
 
@@ -26,7 +27,10 @@ using std::vector;
 //High card = 1
 int transf_cards_to_int(vector<Card> cards){
     //check if contains royal flush:
-
+    if(check_royal_flush(cards)){
+        return 1;
+    }
+    
     return 0;
 }
 

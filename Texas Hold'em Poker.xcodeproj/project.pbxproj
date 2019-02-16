@@ -70,12 +70,12 @@
 		BDF3D648221604A2004E4A89 /* Texas_Hold'em_Poker */ = {
 			isa = PBXGroup;
 			children = (
+				BDF3D65222160878004E4A89 /* Person.h */,
+				BDF3D64F2216084B004E4A89 /* Person.cpp */,
 				BDF3D649221604A2004E4A89 /* Compare.cpp */,
 				BDF3D64B221604A2004E4A89 /* Compare.h */,
 				BDF3D64A221604A2004E4A89 /* Card.h */,
 				BDF3D64C221604A2004E4A89 /* Card.cpp */,
-				BDF3D65222160878004E4A89 /* Person.h */,
-				BDF3D64F2216084B004E4A89 /* Person.cpp */,
 				BDF3D653221748DC004E4A89 /* check_combinations.h */,
 				BDF3D6542217491F004E4A89 /* check_combinations.cpp */,
 			);

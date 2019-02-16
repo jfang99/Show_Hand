@@ -5,7 +5,7 @@
 #define Compare_h
 
 #include"Card.h"
-
+#include"check_combinations.h"
 
 #include<vector>
 using std::vector;

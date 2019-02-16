@@ -26,15 +26,19 @@ class Card{
     //the fields:
 private:
     string color;
+    string suit;
+    string rank;
+    //number is used to represent the order of the card,while rank represents
     int number;
 public:
     //the member functions:
     //Constructors:
     Card();
-    Card(string ccolor, int cnumber);
+    Card(string ccolor,string csuit, string crank);
     string get_color() const;
+    string get_suit() const;
     int get_number() const;
-    void set_number(int a);
+
 };
 
 

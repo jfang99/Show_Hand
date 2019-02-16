@@ -25,3 +25,7 @@ They are needed because when there are 7 cards (maximum), there can be at most t
 - I wrote all these algorithms from scratch without referencing others' codes.
 (It took me about 3 hours to write them)
 
+I learned from a website that the largest number in texas poker is 1(Ace) instead of 13(K)! Therefore I modified the  class Card's field by adding "string rank" which shows the actual symbol on the card. (e.g. J,Q,A) Here's the link to the website:
+https://www.pokernews.com/poker-rules/texas-holdem.htm
+
+I will leave the rest of the change in class interface to tomorrow.
