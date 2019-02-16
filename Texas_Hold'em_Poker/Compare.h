@@ -10,7 +10,7 @@
 #include<vector>
 using std::vector;
 
-bool Compare(const vector<Card>& card1, const vector<Card>& card2);
+//bool Compare(const vector<Card>& card1, const vector<Card>& card2);
 
 
 
@@ -19,12 +19,20 @@ bool Compare(const vector<Card>& card1, const vector<Card>& card2);
 //This function helps me turn sets of cards into integers. Then I can compare the integers to determine who should
 int transf_cards_to_int( vector<Card> cards);
 
-bool check_sequence(vector<Card>& cards);
+bool check_sequence(vector<Card> cards);
 
-vector<Card> get_sequence(vector<Card> cards);
+vector<Card> get_smallest_sequence(vector<Card> cards);
+
+vector<Card> get_2ndlarge_sequence(vector<Card> cards);
+
+vector<Card> get_largest_sequence(vector<Card> cards);
 //int find_min(const vector<Card>& cards);
+
+
+bool same_colors(const vector<Card>& cards);
 
 bool find(const vector<Card>& cards, int target);
 
 void sort_in_order(vector<Card>& card);
+
 #endif /* Compare_h */

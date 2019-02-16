@@ -26,7 +26,7 @@ using std::vector;
 //High card = 1
 int transf_cards_to_int(vector<Card> cards){
     //check if contains royal flush:
- 
+
     return 0;
 }
 
@@ -34,7 +34,7 @@ int transf_cards_to_int(vector<Card> cards){
 //HELPER FUNCTION FOR "TRANSFER":
 
 //"check_sequnce" can be used for Royal Flush, Straight Flush, and Straight:
-bool check_sequence(vector<Card>& cards){
+bool check_sequence(vector<Card> cards){
     sort_in_order(cards);
     bool flag=true;
     bool flagg=true;
@@ -56,8 +56,100 @@ bool check_sequence(vector<Card>& cards){
     return flagg;
 }
 
+
+vector<Card> get_smallest_sequence(vector<Card> cards){
+    vector<Card> result;
+    if(check_sequence(cards)){
+        sort_in_order(cards);
+        bool flag=true;
+        bool flagg=true;
+        int loop_time=cards.size()-4;
+        int i=100;
+        for(i=0;i<loop_time&&flag;i++){
+            
+            for(int k=i;(k<i+4)&&flagg;k++){
+                if((cards[k+1].get_number()==(cards[k].get_number()+1)))
+                {flagg=true;
+                    flag=false;
+                }
+                else{flagg=false;
+                    flag=true;
+                }
+            }
+        }
+        
+        i--;
+        vector<Card> cards2;
+        
+        for(int j=i;j<i+5;j++){
+            cards2.push_back(cards[j]);
+        }
+        result=cards2;
+    }
+        //can't find sequence?
+        else{
+            result=vector<Card>();
+        }
+        
+        return result;
+}
+    
+
+vector<Card> get_2ndlarge_sequence(vector<Card>cards){
+    vector<Card> result;
+    if(check_sequence(cards)){
+        sort_in_order(cards);
+        bool flag=true;
+        bool flagg=true;
+        int loop_time=cards.size()-4;
+        int i=100;
+        for(i=0;i<loop_time&&flag;i++){
+            
+            for(int k=i;(k<i+4)&&flagg;k++){
+                if((cards[k+1].get_number()==(cards[k].get_number()+1)))
+                {flagg=true;
+                    flag=false;
+                }
+                else{flagg=false;
+                    flag=true;
+                }
+            }
+        }
+        
+        i--;
+        vector<Card> cards2;
+        
+        for(int j=i;j<i+5;j++){
+            cards2.push_back(cards[j]);
+        }
+        result=cards2;
+        
+        //However, there may be more than one sequence, and we want to take the second largest one:
+        if(i<(loop_time-1)){
+            i++;
+            //take in ith to last element of cards:
+            vector<Card> cards3;
+            for(int n=i;n<cards.size();n++){
+                cards3.push_back(cards[n]);
+            }
+            //recursion here!!
+            if(check_sequence(cards3)){
+                result=get_smallest_sequence(cards3);
+            }
+        }
+        
+    }
+    
+    //can't find sequence?
+    else{
+        result=vector<Card>();
+    }
+    
+    return result;
+}
+    
 //This function of getting the largest sequence is very complicated because it takes in recursion.
-vector<Card> get_sequence(vector<Card> cards){
+vector<Card> get_largest_sequence(vector<Card> cards){
     vector<Card> result;
     if(check_sequence(cards)){
         sort_in_order(cards);
@@ -96,7 +188,7 @@ vector<Card> get_sequence(vector<Card> cards){
             }
             //recursion here!!
             if(check_sequence(cards3)){
-            result=get_sequence(cards3);
+            result=get_largest_sequence(cards3);
             }
         }
             
@@ -110,8 +202,15 @@ vector<Card> get_sequence(vector<Card> cards){
     return result;
 }
 
-
-
+//the vector taken in should have size of 5
+bool same_colors(const vector<Card>& cards){
+    for(int i=0;i<4;i++){
+        if(cards[i].get_color()!=cards[i+1].get_color()){
+            return false;
+        }
+    }
+    return true;
+}
 
 
 //find minimum:

@@ -13,7 +13,7 @@ int main(){
     Card card1("red",1);
     Card card2("red",4);
     Card card3("red",5);
-    Card card4("red",3);
+    Card card4("red",8);
     Card card5("red",2);
     Card card6("red",7);
     Card card7("red",6);
@@ -26,7 +26,7 @@ int main(){
     if(!check_sequence(cards))cout<<"woshizhu";
     else{cout<<"ggod sequence";}
     
-    vector<Card>ji=get_sequence(cards);
+    vector<Card>ji=get_largest_sequence(cards);
     for(int i=0;i<ji.size();i++){
         cout<<ji[i].get_number();
     }

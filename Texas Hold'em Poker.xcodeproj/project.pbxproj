@@ -11,6 +11,7 @@
 		BDF3D64D221604A2004E4A89 /* Compare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D649221604A2004E4A89 /* Compare.cpp */; };
 		BDF3D64E221604A2004E4A89 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D64C221604A2004E4A89 /* Card.cpp */; };
 		BDF3D6512216084B004E4A89 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D64F2216084B004E4A89 /* Person.cpp */; };
+		BDF3D6552217491F004E4A89 /* check_combinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D6542217491F004E4A89 /* check_combinations.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		BDF3D64C221604A2004E4A89 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
 		BDF3D64F2216084B004E4A89 /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
 		BDF3D65222160878004E4A89 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		BDF3D653221748DC004E4A89 /* check_combinations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = check_combinations.h; sourceTree = "<group>"; };
+		BDF3D6542217491F004E4A89 /* check_combinations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = check_combinations.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				BDF3D64C221604A2004E4A89 /* Card.cpp */,
 				BDF3D65222160878004E4A89 /* Person.h */,
 				BDF3D64F2216084B004E4A89 /* Person.cpp */,
+				BDF3D653221748DC004E4A89 /* check_combinations.h */,
+				BDF3D6542217491F004E4A89 /* check_combinations.cpp */,
 			);
 			path = "Texas_Hold'em_Poker";
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			files = (
 				BDF3D64E221604A2004E4A89 /* Card.cpp in Sources */,
 				BDED9DE022138F4500EAE743 /* main.cpp in Sources */,
+				BDF3D6552217491F004E4A89 /* check_combinations.cpp in Sources */,
 				BDF3D6512216084B004E4A89 /* Person.cpp in Sources */,
 				BDF3D64D221604A2004E4A89 /* Compare.cpp in Sources */,
 			);
