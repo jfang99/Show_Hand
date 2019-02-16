@@ -31,6 +31,8 @@ vector<Card> get_largest_sequence(vector<Card> cards);
 
 bool same_colors(const vector<Card>& cards);
 
+bool same_suits(const vector<Card>& cards);
+
 bool find(const vector<Card>& cards, int target);
 
 void sort_in_order(vector<Card>& card);

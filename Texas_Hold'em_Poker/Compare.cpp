@@ -37,18 +37,21 @@ int transf_cards_to_int(vector<Card> cards){
 
 //HELPER FUNCTION FOR "TRANSFER":
 
-//"check_sequnce" can be used for Royal Flush, Straight Flush, and Straight:
+//"check_sequnce" can be used for checking Royal Flush, Straight Flush, and Straight:
 bool check_sequence(vector<Card> cards){
     sort_in_order(cards);
     bool flag=true;
     bool flagg=true;
-    int loop_time=cards.size()-4;
+    unsigned long loop_time=cards.size()-4;
     //use size()-4 because the maximum size in Texas poker is 7
     
     for(int i=0;i<loop_time&&flag;i++){
-        
         for(int k=i;(k<i+4)&&flagg;k++){
-            if((cards[k+1].get_number()==(cards[k].get_number()+1)))
+            while(cards[k+1].get_number()==cards[k].get_number()){
+                k++;
+                loop_time--;
+            }
+            if(cards[k+1].get_number()==cards[k].get_number()+1)
             {flagg=true;
                 flag=false;
             }
@@ -70,8 +73,11 @@ vector<Card> get_smallest_sequence(vector<Card> cards){
         int loop_time=cards.size()-4;
         int i=100;
         for(i=0;i<loop_time&&flag;i++){
-            
             for(int k=i;(k<i+4)&&flagg;k++){
+                while(cards[k+1].get_number()==cards[k].get_number()){
+                    k++;
+                    loop_time--;
+                }
                 if((cards[k+1].get_number()==(cards[k].get_number()+1)))
                 {flagg=true;
                     flag=false;
@@ -86,6 +92,9 @@ vector<Card> get_smallest_sequence(vector<Card> cards){
         vector<Card> cards2;
         
         for(int j=i;j<i+5;j++){
+            while(cards[j+1].get_number()==cards[j].get_number()+1){
+                j++;
+            }
             cards2.push_back(cards[j]);
         }
         result=cards2;
@@ -108,8 +117,11 @@ vector<Card> get_2ndlarge_sequence(vector<Card>cards){
         int loop_time=cards.size()-4;
         int i=100;
         for(i=0;i<loop_time&&flag;i++){
-            
             for(int k=i;(k<i+4)&&flagg;k++){
+                while(cards[k+1].get_number()==cards[k].get_number()){
+                    k++;
+                    loop_time--;
+                }
                 if((cards[k+1].get_number()==(cards[k].get_number()+1)))
                 {flagg=true;
                     flag=false;
@@ -162,8 +174,11 @@ vector<Card> get_largest_sequence(vector<Card> cards){
         int loop_time=cards.size()-4;
         int i=100;
         for(i=0;i<loop_time&&flag;i++){
-            
             for(int k=i;(k<i+4)&&flagg;k++){
+                while(cards[k+1].get_number()==cards[k].get_number()){
+                    k++;
+                    loop_time--;
+                }
                 if((cards[k+1].get_number()==(cards[k].get_number()+1)))
                 {flagg=true;
                     flag=false;
@@ -216,6 +231,15 @@ bool same_colors(const vector<Card>& cards){
     return true;
 }
 
+//vector has size of 5
+bool same_suits(const vector<Card>& cards){
+    for(int i=0;i<4;i++){
+        if(cards[i].get_suit()!=cards[i+1].get_suit()){
+            return false;
+        }
+    }
+    return true;
+    }
 
 //find minimum:
 /*int find_min(const vector<Card>& cards){
@@ -248,9 +272,7 @@ void sort_in_order(vector<Card>& cards){
             min=cards[m].get_number();}
         }
         //swap k and i
-        int temp=cards[i].get_number();
-        cards[i].set_number(cards[k].get_number());
-        cards[k].set_number(temp);
+        std::swap(cards[k],cards[i]);
     }
     return;
 }

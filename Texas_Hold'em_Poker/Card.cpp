@@ -45,10 +45,14 @@ int Card::get_number() const{
     return number;
 }
 
+void Card::set_number(int a){
+    number=a;
+}
+
 
 //Non-member functions:
 ostream& operator<<(ostream& out, const Card& card){
-out<<"Color:"<<card.get_color()<<endl;
-out<<"Number:"<<card.get_number()<<endl;
+out<<card.get_color()<<card.get_suit()<<card.get_rank()<<endl;
+
     return out;
 }

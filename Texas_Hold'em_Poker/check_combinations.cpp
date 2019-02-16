@@ -2,12 +2,13 @@
 
 
 bool check_royal_flush(vector<Card> cards){
+    if(check_sequence(cards)){
     vector<Card> sequence=get_largest_sequence(cards);
- 
-    if(same_colors(sequence)&&((sequence[0].get_number())==10)){
+    //9 represents rank 10, as 10JQKA is royal flush
+    if(same_colors(sequence)&&same_suits(sequence)&&((sequence[0].get_number())==9)){
         return true;
     }
-    
+    }
     return false;
 }
 

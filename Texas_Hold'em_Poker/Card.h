@@ -37,7 +37,9 @@ public:
     Card(string ccolor,string csuit, string crank);
     string get_color() const;
     string get_suit() const;
+    string get_rank() const;
     int get_number() const;
+    void set_number(int a);
 
 };
 

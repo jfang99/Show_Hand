@@ -29,3 +29,10 @@ I learned from a website that the largest number in texas poker is 1(Ace) instea
 https://www.pokernews.com/poker-rules/texas-holdem.htm
 
 I will leave the rest of the change in class interface to tomorrow.
+
+2019/2/16
+I added suit and rank to class Card.
+Suit represents the type while rank represents the symbol(e.g. K,J)
+
+Note: I realized that the reason why cpp file needs a header file is that we don't need to care about the order of functions. For example, if we write function x before y and try to use y in x, then there would be an error. However this error won't appear if header file is included.
+
