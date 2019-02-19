@@ -21,11 +21,8 @@ int transf_cards_to_int( vector<Card> cards);
 
 bool check_sequence(vector<Card> cards);
 
-vector<Card> get_smallest_sequence(vector<Card> cards);
+vector<Card> get_sequence(vector<Card> cards);
 
-vector<Card> get_2ndlarge_sequence(vector<Card> cards);
-
-vector<Card> get_largest_sequence(vector<Card> cards);
 //int find_min(const vector<Card>& cards);
 
 

@@ -42,4 +42,5 @@ Note to myself: always call "check_sequence" before "get_sequence".
 I was competing in "Hack on Hill" yesterday so I didn't have any progress yesterday.
 # Today I've changed my mind to switch the topic of my project from "Texas Hold'em Poker" to "Show Hand".
 The reason is that Texas Hold'em Poker's algorithm is too complex and takes most of the time to work on the algorithm part. However, since I want to learn some new techniques, I don't want to spend too much time on algorithm. Therefore, I've switched to a similar Chinese poker game "Show Hand". Their rules are basically the same, but "Show Hand"'s maximum card size is 5 while "Texas Hold'em Poker" is 7. This little difference makes a lot of differences in the work load. For example, I don't need the function "get_largest_sequence" because there could only be one sequence in "Show Hand"! 
+So briefly speaking, I will keep working on my previous project, but quite a bit of changes need to be made.
 
