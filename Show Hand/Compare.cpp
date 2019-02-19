@@ -3,10 +3,81 @@
 
 using std::vector;
 
-//bool Compare(const vector<Card>& card1, const vector<Card>& card2){
-  
+bool operator >(const vector<Card>& card1, const vector<Card>& card2){
+    //psudocode for it:
+    int a=transf_cards_to_int(card1);
+    int b=transf_cards_to_int(card2);
+    if(a>b)return true;
+    else if(a<b)return false;
+    else if(a==b){
+        //if royal flush:
+        if(a==10){
+            return false;
+        }
+        //if straight flush:
+        else if(a==9){
+            vector<Card> carda=get_largest_sequence(card1);
+            vector<Card> cardb=get_largest_sequence(card2);
+            if(carda[0].get_number()>cardb[0].get_number())return true;
+            else return false;
+        }
+        //if four of a kind:
+        else if(a==8){
+            vector<Card> carda=get_four_of_kind(card1);
+            vector<Card> cardb=get_four_of_kind(card2);
+            if(carda[0].get_number()>cardb[0].get_number())return true;
+            else return false;
+        }
+        //if full house:
+        else if(a==7){
+            vector<Card> carda=get_three(card1);
+            vector<Card> cardb=get_three(card2);
+            if(carda[0].get_number()>cardb[0].get_number())return true;
+            else{
+                carda=get_largest_two(card1);
+                cardb=get_largest_two(card2);
+                if(carda[0].get_number()>cardb[0].get_number())return true;
+                else return false;
+            }
+        }
+        //if flush:
+        else if(a==6){
+            //note for get_suit: when writing get_suit, the size can be over five.
+            vector<Card> carda=get_suit(card1);
+            vector<Card> cardb=get_suit(card2);
+            if(carda[carda.size()-1].get_number()>cardb[cardb.size()-1].get_number())return true;
+            else return false;
+        }
+        //if straight:
+        else if(a==5){
+            vector<Card> carda=get_largest_sequence(card1);
+            vector<Card> cardb=get_largest_sequence(card2);
+            if(carda[0].get_number()>cardb[0].get_number())return true;
+            else return false;
+        }
+        //if three of a kind:
+        else if(a==4){
+            //note: this is reusing get_three:
+            vector<Card> carda=get_three(card1);
+            vector<Card> cardb=get_three(card2);
+            if(carda[0].get_number()>cardb[0].get_number())return true;
+            else return false;
+        }
+        //if two pair:
+        else if(a==3){
+            vector<Card> carda=get_largest_pair(card1);
+            vector<Card> cardb=get_largest_pair(card2);
+            if(carda[0].get_number()>cardb[0].get_number())return true;
+            else{
+                
+            }
+                
+        }
         
-//}
+    }
+    }
+        
+}
 
 
 
@@ -28,7 +99,7 @@ using std::vector;
 int transf_cards_to_int(vector<Card> cards){
     //check if contains royal flush:
     if(check_royal_flush(cards)){
-        return 1;
+        return 10;
     }
     
     return 0;
@@ -47,11 +118,16 @@ bool check_sequence(vector<Card> cards){
     
     for(int i=0;i<loop_time&&flag;i++){
         for(int k=i;(k<i+4)&&flagg;k++){
+            //handle repetition
             while(cards[k+1].get_number()==cards[k].get_number()){
                 k++;
                 loop_time--;
             }
-            if(cards[k+1].get_number()==cards[k].get_number()+1)
+            //handle "2345677" situation:
+            if(k+1>=(cards.size()-1)){
+                return false;
+            }
+            else if(cards[k+1].get_number()==cards[k].get_number()+1)
             {flagg=true;
                 flag=false;
             }
@@ -78,7 +154,8 @@ vector<Card> get_smallest_sequence(vector<Card> cards){
                     k++;
                     loop_time--;
                 }
-                if((cards[k+1].get_number()==(cards[k].get_number()+1)))
+                if(k>=(cards.size()-1))return vector<Card>();
+                else if((cards[k+1].get_number()==(cards[k].get_number()+1)))
                 {flagg=true;
                     flag=false;
                 }
@@ -122,7 +199,8 @@ vector<Card> get_2ndlarge_sequence(vector<Card>cards){
                     k++;
                     loop_time--;
                 }
-                if((cards[k+1].get_number()==(cards[k].get_number()+1)))
+                 if(k>=(cards.size()-1))return vector<Card>();
+               else if((cards[k+1].get_number()==(cards[k].get_number()+1)))
                 {flagg=true;
                     flag=false;
                 }
@@ -136,12 +214,15 @@ vector<Card> get_2ndlarge_sequence(vector<Card>cards){
         vector<Card> cards2;
         
         for(int j=i;j<i+5;j++){
+            while(cards[j+1].get_number()==cards[j].get_number()+1){
+                j++;
+            }
             cards2.push_back(cards[j]);
         }
         result=cards2;
         
         //However, there may be more than one sequence, and we want to take the second largest one:
-        if(i<(loop_time-1)){
+        while(i<(loop_time-1)){
             i++;
             //take in ith to last element of cards:
             vector<Card> cards3;
@@ -179,7 +260,8 @@ vector<Card> get_largest_sequence(vector<Card> cards){
                     k++;
                     loop_time--;
                 }
-                if((cards[k+1].get_number()==(cards[k].get_number()+1)))
+                 if(k>=(cards.size()-1))return vector<Card>();
+                else if((cards[k+1].get_number()==(cards[k].get_number()+1)))
                 {flagg=true;
                     flag=false;
                 }
@@ -193,6 +275,9 @@ vector<Card> get_largest_sequence(vector<Card> cards){
         vector<Card> cards2;
         
         for(int j=i;j<i+5;j++){
+            while(cards[j+1].get_number()==cards[j].get_number()+1){
+                j++;
+            }
             cards2.push_back(cards[j]);
         }
         result=cards2;

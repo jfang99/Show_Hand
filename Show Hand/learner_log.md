@@ -36,3 +36,10 @@ Suit represents the type while rank represents the symbol(e.g. K,J)
 
 Note: I realized that the reason why cpp file needs a header file is that we don't need to care about the order of functions. For example, if we write function x before y and try to use y in x, then there would be an error. However this error won't appear if header file is included.
 
+Note to myself: always call "check_sequence" before "get_sequence".
+
+2019/2/18
+I was competing in "Hack on Hill" yesterday so I didn't have any progress yesterday.
+# Today I've changed my mind to switch the topic of my project from "Texas Hold'em Poker" to "Show Hand".
+The reason is that Texas Hold'em Poker's algorithm is too complex and takes most of the time to work on the algorithm part. However, since I want to learn some new techniques, I don't want to spend too much time on algorithm. Therefore, I've switched to a similar Chinese poker game "Show Hand". Their rules are basically the same, but "Show Hand"'s maximum card size is 5 while "Texas Hold'em Poker" is 7. This little difference makes a lot of differences in the work load. For example, I don't need the function "get_largest_sequence" because there could only be one sequence in "Show Hand"! 
+

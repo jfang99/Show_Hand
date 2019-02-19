@@ -11,11 +11,11 @@ int main(){
     
     
     Card card1("red","\u2661","9");
-    Card card2("red","\u2661","J");
-    Card card3("red","\u2661","10");
-    Card card4("red","\u2661","10");
+    Card card2("red","\u2661","10");
+    Card card3("red","\u2661","Q");
+    Card card4("red","\u2661","J");
     Card card5("red","\u2661","K");
-    Card card6("red","\u2661","8");
+    Card card6("red","\u2661","A");
     Card card7("red","\u2661","7");
     
     vector<Card> cards={card1,card2,card3,card4,card5,card6,card7};

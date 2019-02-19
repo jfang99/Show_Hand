@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BDC28A2A221B9D1400E9481F /* Compare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDC28A21221B9D1400E9481F /* Compare.cpp */; };
+		BDC28A2B221B9D1400E9481F /* check_combinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDC28A24221B9D1400E9481F /* check_combinations.cpp */; };
+		BDC28A2C221B9D1400E9481F /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDC28A26221B9D1400E9481F /* Person.cpp */; };
+		BDC28A2D221B9D1400E9481F /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDC28A28221B9D1400E9481F /* Card.cpp */; };
+		BDC28A2E221B9D1400E9481F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDC28A29221B9D1400E9481F /* main.cpp */; };
 		BDED9DE022138F4500EAE743 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDED9DDE22138F4500EAE743 /* main.cpp */; };
-		BDF3D64D221604A2004E4A89 /* Compare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D649221604A2004E4A89 /* Compare.cpp */; };
-		BDF3D64E221604A2004E4A89 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D64C221604A2004E4A89 /* Card.cpp */; };
-		BDF3D6512216084B004E4A89 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D64F2216084B004E4A89 /* Person.cpp */; };
-		BDF3D6552217491F004E4A89 /* check_combinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDF3D6542217491F004E4A89 /* check_combinations.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,16 +28,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BDC28A1B221B9D1400E9481F /* Show Hand.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Show Hand.xcodeproj"; sourceTree = "<group>"; };
+		BDC28A1E221B9D1400E9481F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BDC28A20221B9D1400E9481F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		BDC28A21221B9D1400E9481F /* Compare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compare.cpp; sourceTree = "<group>"; };
+		BDC28A22221B9D1400E9481F /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		BDC28A23221B9D1400E9481F /* check_combinations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = check_combinations.h; sourceTree = "<group>"; };
+		BDC28A24221B9D1400E9481F /* check_combinations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = check_combinations.cpp; sourceTree = "<group>"; };
+		BDC28A25221B9D1400E9481F /* Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compare.h; sourceTree = "<group>"; };
+		BDC28A26221B9D1400E9481F /* Person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
+		BDC28A27221B9D1400E9481F /* learner_log.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = learner_log.md; sourceTree = "<group>"; };
+		BDC28A28221B9D1400E9481F /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		BDC28A29221B9D1400E9481F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BDE5ED9C220E026700E7FAE8 /* Texas Hold'em Poker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Texas Hold'em Poker"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDED9DDE22138F4500EAE743 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		BDF3D649221604A2004E4A89 /* Compare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compare.cpp; sourceTree = "<group>"; };
-		BDF3D64A221604A2004E4A89 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
-		BDF3D64B221604A2004E4A89 /* Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compare.h; sourceTree = "<group>"; };
-		BDF3D64C221604A2004E4A89 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
-		BDF3D64F2216084B004E4A89 /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
-		BDF3D65222160878004E4A89 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		BDF3D653221748DC004E4A89 /* check_combinations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = check_combinations.h; sourceTree = "<group>"; };
-		BDF3D6542217491F004E4A89 /* check_combinations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = check_combinations.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,10 +55,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BDC28A1A221B9D1400E9481F /* Show Hand */ = {
+			isa = PBXGroup;
+			children = (
+				BDC28A1B221B9D1400E9481F /* Show Hand.xcodeproj */,
+				BDC28A1E221B9D1400E9481F /* README.md */,
+				BDC28A1F221B9D1400E9481F /* Show Hand */,
+				BDC28A29221B9D1400E9481F /* main.cpp */,
+			);
+			name = "Show Hand";
+			sourceTree = "<group>";
+		};
+		BDC28A1C221B9D1400E9481F /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDC28A1F221B9D1400E9481F /* Show Hand */ = {
+			isa = PBXGroup;
+			children = (
+				BDC28A20221B9D1400E9481F /* Person.h */,
+				BDC28A21221B9D1400E9481F /* Compare.cpp */,
+				BDC28A22221B9D1400E9481F /* Card.h */,
+				BDC28A23221B9D1400E9481F /* check_combinations.h */,
+				BDC28A24221B9D1400E9481F /* check_combinations.cpp */,
+				BDC28A25221B9D1400E9481F /* Compare.h */,
+				BDC28A26221B9D1400E9481F /* Person.cpp */,
+				BDC28A27221B9D1400E9481F /* learner_log.md */,
+				BDC28A28221B9D1400E9481F /* Card.cpp */,
+			);
+			path = "Show Hand";
+			sourceTree = "<group>";
+		};
 		BDE5ED93220E026700E7FAE8 = {
 			isa = PBXGroup;
 			children = (
-				BDF3D648221604A2004E4A89 /* Texas_Hold'em_Poker */,
+				BDC28A1A221B9D1400E9481F /* Show Hand */,
 				BDED9DDE22138F4500EAE743 /* main.cpp */,
 				BDE5ED9D220E026700E7FAE8 /* Products */,
 			);
@@ -65,21 +102,6 @@
 				BDE5ED9C220E026700E7FAE8 /* Texas Hold'em Poker */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BDF3D648221604A2004E4A89 /* Texas_Hold'em_Poker */ = {
-			isa = PBXGroup;
-			children = (
-				BDF3D65222160878004E4A89 /* Person.h */,
-				BDF3D64F2216084B004E4A89 /* Person.cpp */,
-				BDF3D649221604A2004E4A89 /* Compare.cpp */,
-				BDF3D64B221604A2004E4A89 /* Compare.h */,
-				BDF3D64A221604A2004E4A89 /* Card.h */,
-				BDF3D64C221604A2004E4A89 /* Card.cpp */,
-				BDF3D653221748DC004E4A89 /* check_combinations.h */,
-				BDF3D6542217491F004E4A89 /* check_combinations.cpp */,
-			);
-			path = "Texas_Hold'em_Poker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BDE5ED97220E026700E7FAE8 /* Build configuration list for PBXProject "Texas Hold'em Poker" */;
+			buildConfigurationList = BDE5ED97220E026700E7FAE8 /* Build configuration list for PBXProject "Show Hand" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,6 +148,12 @@
 			mainGroup = BDE5ED93220E026700E7FAE8;
 			productRefGroup = BDE5ED9D220E026700E7FAE8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BDC28A1C221B9D1400E9481F /* Products */;
+					ProjectRef = BDC28A1B221B9D1400E9481F /* Show Hand.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BDE5ED9B220E026700E7FAE8 /* Texas Hold'em Poker */,
@@ -138,11 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDF3D64E221604A2004E4A89 /* Card.cpp in Sources */,
 				BDED9DE022138F4500EAE743 /* main.cpp in Sources */,
-				BDF3D6552217491F004E4A89 /* check_combinations.cpp in Sources */,
-				BDF3D6512216084B004E4A89 /* Person.cpp in Sources */,
-				BDF3D64D221604A2004E4A89 /* Compare.cpp in Sources */,
+				BDC28A2B221B9D1400E9481F /* check_combinations.cpp in Sources */,
+				BDC28A2E221B9D1400E9481F /* main.cpp in Sources */,
+				BDC28A2C221B9D1400E9481F /* Person.cpp in Sources */,
+				BDC28A2A221B9D1400E9481F /* Compare.cpp in Sources */,
+				BDC28A2D221B9D1400E9481F /* Card.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +308,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BDE5ED97220E026700E7FAE8 /* Build configuration list for PBXProject "Texas Hold'em Poker" */ = {
+		BDE5ED97220E026700E7FAE8 /* Build configuration list for PBXProject "Show Hand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDE5EDA1220E026700E7FAE8 /* Debug */,
