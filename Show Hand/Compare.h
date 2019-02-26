@@ -26,12 +26,18 @@ vector<Card> get_sequence(vector<Card> cards);
 //int find_min(const vector<Card>& cards);
 
 
-bool same_colors(const vector<Card>& cards);
-
 bool same_suits(const vector<Card>& cards);
 
 bool find(const vector<Card>& cards, int target);
 
 void sort_in_order(vector<Card>& card);
+
+vector<Card> get_four_of_kind(vector<Card> cards);
+
+vector<Card> get_three(vector<Card>cards);
+
+vector<Card> get_two(vector<Card> cards);
+
+vector<Card> get_three_only(vector<Card> cards);
 
 #endif /* Compare_h */

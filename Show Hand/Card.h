@@ -25,7 +25,6 @@ using namespace std;
 class Card{
     //the fields:
 private:
-    string color;
     string suit;
     string rank;
     //number is used to represent the order of the card,while rank represents
@@ -34,8 +33,7 @@ public:
     //the member functions:
     //Constructors:
     Card();
-    Card(string ccolor,string csuit, string crank);
-    string get_color() const;
+    Card(string csuit, string crank);
     string get_suit() const;
     string get_rank() const;
     int get_number() const;

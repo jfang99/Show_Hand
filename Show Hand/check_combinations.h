@@ -8,4 +8,13 @@ bool check_royal_flush(vector<Card> cards);
 
 bool check_straight_flush(vector<Card> cards);
 
+bool check_four_of_kind(vector<Card> cards);
+
+bool check_full_house(vector<Card>cards);
+
+bool check_flush(vector<Card>cards);
+
+bool check_straight(vector<Card> cards);
+
+bool check_three_of_kind_only(vector<Card> cards);
 #endif /* check_combinations_h */

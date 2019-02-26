@@ -10,11 +10,11 @@ int main(){
     cout<<"\u2662"<<"\u2660"<<"\u2663";
     
     
-    Card card1("red","\u2661","9");
-    Card card2("red","\u2661","10");
-    Card card3("red","\u2661","Q");
-    Card card4("red","\u2661","J");
-    Card card5("red","\u2661","K");
+    Card card1("\u2661","9");
+    Card card2("\u2661","10");
+    Card card3("\u2661","Q");
+    Card card4("\u2661","J");
+    Card card5("\u2661","K");
  
     
     vector<Card> cards={card1,card2,card3,card4,card5};

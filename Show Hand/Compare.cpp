@@ -3,13 +3,16 @@
 
 using std::vector;
 
-bool operator >(const vector<Card>& card1, const vector<Card>& card2){
-    //psudocode for it:
+bool operator >( vector<Card> card1,  vector<Card> card2){
+    //psudocode
     int a=transf_cards_to_int(card1);
     int b=transf_cards_to_int(card2);
+    
     if(a>b)return true;
     else if(a<b)return false;
     else if(a==b){
+        sort_in_order(card1);
+        sort_in_order(card2);
         
         //if royal flush:
         if(a==10){
@@ -18,9 +21,7 @@ bool operator >(const vector<Card>& card1, const vector<Card>& card2){
         
         //if straight flush:
         else if(a==9){
-            vector<Card> carda=get_largest_sequence(card1);
-            vector<Card> cardb=get_largest_sequence(card2);
-            if(carda[0].get_number()>cardb[0].get_number())return true;
+            if(card1[0].get_number()>card1[0].get_number())return true;
             else return false;
         }
         
@@ -38,8 +39,8 @@ bool operator >(const vector<Card>& card1, const vector<Card>& card2){
             vector<Card> cardb=get_three(card2);
             if(carda[0].get_number()>cardb[0].get_number())return true;
             else{
-                carda=get_largest_two(card1);
-                cardb=get_largest_two(card2);
+                carda=get_two(card1);
+                cardb=get_two(card2);
                 if(carda[0].get_number()>cardb[0].get_number())return true;
                 else return false;
             }
@@ -47,26 +48,21 @@ bool operator >(const vector<Card>& card1, const vector<Card>& card2){
         
         //if flush:
         else if(a==6){
-            //note for get_suit: when writing get_suit, the size can be over five.
-            vector<Card> carda=get_suit(card1);
-            vector<Card> cardb=get_suit(card2);
-            if(carda[carda.size()-1].get_number()>cardb[cardb.size()-1].get_number())return true;
+            if(card1[4].get_number()>card2[4].get_number())return true;
             else return false;
         }
         
         //if straight:
         else if(a==5){
-            vector<Card> carda=get_largest_sequence(card1);
-            vector<Card> cardb=get_largest_sequence(card2);
-            if(carda[0].get_number()>cardb[0].get_number())return true;
+            if(card1[0].get_number()>card2[0].get_number())return true;
             else return false;
         }
         
         //if three of a kind:
         else if(a==4){
             //note: this is reusing get_three:
-            vector<Card> carda=get_three(card1);
-            vector<Card> cardb=get_three(card2);
+            vector<Card> carda=get_three_only(card1);
+            vector<Card> cardb=get_three_only(card2);
             if(carda[0].get_number()>cardb[0].get_number())return true;
             else return false;
         }
@@ -94,6 +90,7 @@ bool operator >(const vector<Card>& card1, const vector<Card>& card2){
 
 
 //helper function:
+
 //Royal flush = 10
 //Straight flush = 9
 //Four of a kind = 8
@@ -104,10 +101,29 @@ bool operator >(const vector<Card>& card1, const vector<Card>& card2){
 //Two pair = 3
 //One pair = 2
 //High card = 1
+
 int transf_cards_to_int(vector<Card> cards){
     //check if contains royal flush:
     if(check_royal_flush(cards)){
         return 10;
+    }
+    if(check_straight_flush(cards)){
+        return 9;
+    }
+    if(check_four_of_kind(cards)){
+        return 8;
+    }
+    if(check_full_house(cards)){
+        return 7;
+    }
+    if(check_flush(cards)){
+        return 6;
+    }
+    if(check_straight(cards)){
+        return 5;
+    }
+    if(check_three_of_kind_only(cards)){
+        return 4;
     }
     
     return 0;
@@ -116,13 +132,16 @@ int transf_cards_to_int(vector<Card> cards){
 
 //HELPER FUNCTION FOR "TRANSFER":
 
+
+
+
 //"check_sequnce" can be used for checking Royal Flush, Straight Flush, and Straight:
 bool check_sequence(vector<Card> cards){
     sort_in_order(cards);
     bool flag=true;
 
-    for(int i=0;i<5&&flag;i++){
-        if(cards[k+1].get_number()==cards[k].get_number())flag=true;
+    for(int i=0;i<4&&flag;i++){
+        if(cards[i+1].get_number()==cards[i].get_number())flag=true;
         else flag=false;
     }
     
@@ -135,18 +154,9 @@ vector<Card> get_sequence(vector<Card> cards){
     vector<Card> result;
     if(check_sequence(cards)){
         sort_in_order(cards);
-        flag=true;
-        for(int i=0;i<5&&flag;i++){
-            if(cards[k+1].get_number()==cards[k].get_number()){
-                flag=true;
-            }
-            else flag=false;
-        }
-        
         for(int i=0;i<5;i++){
-            cards2.push_back(cards[i]);
+            result.push_back(cards[i]);
         }
-        result=cards2;
     }
         //can't find sequence?
         else{
@@ -158,19 +168,9 @@ vector<Card> get_sequence(vector<Card> cards){
     
 
 
-//the vector taken in should have size of 5
-bool same_colors(const vector<Card>& cards){
-    for(int i=0;i<4;i++){
-        if(cards[i].get_color()!=cards[i+1].get_color()){
-            return false;
-        }
-    }
-    return true;
-}
 
-//vector has size of 5
 bool same_suits(const vector<Card>& cards){
-    for(int i=0;i<4;i++){
+    for(int i=0;i<cards.size();i++){
         if(cards[i].get_suit()!=cards[i+1].get_suit()){
             return false;
         }
@@ -190,17 +190,17 @@ bool same_suits(const vector<Card>& cards){
 }*/
 
 //decide if certain number is found in the vector:
-bool find(const vector<Card>& cards, int target){
+/*bool find(const vector<Card>& cards, int target){
     for(int i=0; i<cards.size(); i++){
         if ((cards[i].get_number())==target)return true;
     }
     return false;
-}
+}*/
 
 //sort cards from smallest to biggest
 //using selection sort:
 void sort_in_order(vector<Card>& cards){
-    for(int i=0;i<cards.size();i++){
+    for(int i=0;i<(cards.size()-1);i++){
         int k=i;
         int min=cards[k].get_number();
         for(int m=i;m<cards.size();m++){
@@ -212,4 +212,75 @@ void sort_in_order(vector<Card>& cards){
         std::swap(cards[k],cards[i]);
     }
     return;
+}
+
+
+
+vector<Card> get_four_of_kind(vector<Card> cards){
+    vector<Card> result;
+    //first check if there's four of kind:
+    if(check_four_of_kind(cards)){
+        sort_in_order(cards);
+        if(cards[0].get_number()==cards[1].get_number()){
+            for(int i=0;i<4;i++){
+                result.push_back(cards[i]);
+            }
+        }
+        else{
+            for(int i=1;i<5;i++){
+                result.push_back(cards[i]);
+            }
+        }
+    }
+    return result;
+}
+
+vector<Card> get_three(vector<Card> cards){
+    vector<Card> result;
+    if(check_full_house(cards)){
+        if(cards[1].get_number()==cards[2].get_number()){
+            for(int i=0;i<3;i++){
+                result.push_back(cards[i]);
+            }
+        }
+        else{
+            for(int i=2;i<5;i++){
+                result.push_back(cards[i]);
+            }
+        }
+    }
+    return result;
+}
+
+vector<Card> get_two(vector<Card> cards){
+    vector<Card> result;
+    if(cards[1].get_number()==cards[2].get_number()){
+        result.push_back(cards[3]);
+        result.push_back(cards[4]);
+    }
+    else{
+        result.push_back(cards[0]);
+        result.push_back(cards[1]);
+    }
+    return result;
+}
+
+vector<Card> get_three_only(vector<Card> cards){
+    vector<Card> result;
+    sort_in_order(cards);
+    if(!check_full_house(cards)&&check_three_of_kind_only(cards)){
+        int i;
+        if(cards[0].get_number()==cards[1].get_number()&&cards[1].get_number()==cards[2].get_number())
+            i=0;
+        if(cards[1].get_number()==cards[2].get_number()&&cards[2].get_number()==cards[3].get_number())
+            i=1;
+        if(cards[2].get_number()==cards[3].get_number()&&cards[3].get_number()==cards[4].get_number())
+            i=2;
+        
+        for(int j=i;j<i+3;j++){
+            result.push_back(cards[j]);
+        }
+    }
+    
+    return result;
 }

@@ -1,6 +1,10 @@
 # Show_Hand
 This is Show Hand Poker game with C++ language.
 
+# This is a link to a brief introduction of the game:
+https://en-betfair.custhelp.com/app/answers/detail/a_id/5954/~/poker%3A-how-to-play-5-card-stud
+
+
 # Below is the rule for Show_Hand:
 （First Street)First everyone is dealt two cards (one coverd & one face up).
 Then everyone has to bet a certain amount of money (called "bottom_pouring").

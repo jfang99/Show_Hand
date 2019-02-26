@@ -44,3 +44,6 @@ I was competing in "Hack on Hill" yesterday so I didn't have any progress yester
 The reason is that Texas Hold'em Poker's algorithm is too complex and takes most of the time to work on the algorithm part. However, since I want to learn some new techniques, I don't want to spend too much time on algorithm. Therefore, I've switched to a similar Chinese poker game "Show Hand". Their rules are basically the same, but "Show Hand"'s maximum card size is 5 while "Texas Hold'em Poker" is 7. This little difference makes a lot of differences in the work load. For example, I don't need the function "get_largest_sequence" because there could only be one sequence in "Show Hand"! 
 So briefly speaking, I will keep working on my previous project, but quite a bit of changes need to be made.
 
+2019/2/25
+I wrote the algorithm and corresponding helper functions for checking "royal flush" "straight flush" "four of a kind" "full house" "flush" "straight" "three of a kind".
+The remaining ones are "two pair" "one pair" "high card".

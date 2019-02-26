@@ -3,15 +3,14 @@
 using namespace std;
 
 Card::Card(){
-    color = "";
+
     suit="";
     rank="";
     number = 0;
     
 }
 
-Card::Card(string ccolor, string csuit, string crank){
-    color=ccolor;
+Card::Card( string csuit, string crank){
     suit=csuit;
     rank=crank;
     if(crank=="2")number=1;
@@ -29,9 +28,7 @@ Card::Card(string ccolor, string csuit, string crank){
     if(crank=="A")number=13;
 }
 
-string Card::get_color() const{
-    return color;
-}
+
 
 string Card::get_suit() const{
     return suit;
@@ -52,7 +49,7 @@ void Card::set_number(int a){
 
 //Non-member functions:
 ostream& operator<<(ostream& out, const Card& card){
-out<<card.get_color()<<card.get_suit()<<card.get_rank()<<endl;
+out<<card.get_suit()<<card.get_rank()<<endl;
 
     return out;
 }

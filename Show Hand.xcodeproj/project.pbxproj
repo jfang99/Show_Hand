@@ -70,10 +70,10 @@
 			children = (
 				BDC28A26221B9D1400E9481F /* Person.cpp */,
 				BDC28A20221B9D1400E9481F /* Person.h */,
-				BDC28A21221B9D1400E9481F /* Compare.cpp */,
-				BDC28A25221B9D1400E9481F /* Compare.h */,
 				BDC28A22221B9D1400E9481F /* Card.h */,
 				BDC28A28221B9D1400E9481F /* Card.cpp */,
+				BDC28A21221B9D1400E9481F /* Compare.cpp */,
+				BDC28A25221B9D1400E9481F /* Compare.h */,
 				BDC28A23221B9D1400E9481F /* check_combinations.h */,
 				BDC28A24221B9D1400E9481F /* check_combinations.cpp */,
 			);
