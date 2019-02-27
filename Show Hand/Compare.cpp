@@ -67,21 +67,29 @@ bool operator >( vector<Card> card1,  vector<Card> card2){
             else return false;
         }
         
-        //if two pair:
+        //if two pairs:
         else if(a==3){
-            vector<Card> carda=get_largest_pair(card1);
-            vector<Card> cardb=get_largest_pair(card2);
+            vector<Card> carda=get_larger_pair(card1);
+            vector<Card> cardb=get_larger_pair(card2);
             if(carda[0].get_number()>cardb[0].get_number())return true;
             else{
-                
+                carda=get_smaller_pair(card1);
+                cardb=get_smaller_pair(card2);
+                if(carda[0].get_number()>cardb[0].get_number())return true;
             }
-                
+            
+            return false;
         }
         
+        //if one pair:
+        else if(a==2){
+            
+        }
     }
+    return false;
     }
         
-}
+
 
 
 
@@ -125,7 +133,12 @@ int transf_cards_to_int(vector<Card> cards){
     if(check_three_of_kind_only(cards)){
         return 4;
     }
-    
+    if(check_two_pairs_only(cards)){
+        return 3;
+    }
+    if(check_one_pair_only(cards)){
+        return 2;
+    }
     return 0;
 }
 
@@ -141,7 +154,7 @@ bool check_sequence(vector<Card> cards){
     bool flag=true;
 
     for(int i=0;i<4&&flag;i++){
-        if(cards[i+1].get_number()==cards[i].get_number())flag=true;
+        if(cards[i+1].get_number()==cards[i].get_number()+1)flag=true;
         else flag=false;
     }
     
@@ -178,24 +191,7 @@ bool same_suits(const vector<Card>& cards){
     return true;
     }
 
-//find minimum:
-/*int find_min(const vector<Card>& cards){
-    int min=13;
-    for(int i=0; i<cards.size();i++){
-        if(((cards[i]).get_number())<=min){
-            min=cards[i].get_number();
-        }
-    }
-    return min;
-}*/
 
-//decide if certain number is found in the vector:
-/*bool find(const vector<Card>& cards, int target){
-    for(int i=0; i<cards.size(); i++){
-        if ((cards[i].get_number())==target)return true;
-    }
-    return false;
-}*/
 
 //sort cards from smallest to biggest
 //using selection sort:
@@ -265,11 +261,12 @@ vector<Card> get_two(vector<Card> cards){
     return result;
 }
 
+//works only for three_of_kind
 vector<Card> get_three_only(vector<Card> cards){
     vector<Card> result;
     sort_in_order(cards);
     if(!check_full_house(cards)&&check_three_of_kind_only(cards)){
-        int i;
+        int i=0;
         if(cards[0].get_number()==cards[1].get_number()&&cards[1].get_number()==cards[2].get_number())
             i=0;
         if(cards[1].get_number()==cards[2].get_number()&&cards[2].get_number()==cards[3].get_number())
@@ -282,5 +279,46 @@ vector<Card> get_three_only(vector<Card> cards){
         }
     }
     
+    return result;
+}
+
+
+vector<Card> get_larger_pair(vector<Card>cards){
+    sort_in_order(cards);
+    vector<Card> result;
+    if(check_two_pairs_only(cards)){
+        if(cards[0].get_number()==cards[1].get_number()&&cards[2].get_number()==cards[3].get_number()){
+            result.push_back(cards[2]);
+            result.push_back(cards[3]);
+        }
+        if(cards[1].get_number()==cards[2].get_number()&&cards[3].get_number()==cards[4].get_number()){
+            result.push_back(cards[3]);
+            result.push_back(cards[4]);
+        }
+        if(cards[0].get_number()==cards[1].get_number()&&cards[3].get_number()==cards[4].get_number()){
+            result.push_back(cards[3]);
+            result.push_back(cards[4]);
+        }
+    }
+    return result;
+}
+
+vector<Card> get_smaller_pair(vector<Card> cards){
+    sort_in_order(cards);
+    vector<Card> result;
+    if(check_two_pairs_only(cards)){
+        if(cards[0].get_number()==cards[1].get_number()&&cards[2].get_number()==cards[3].get_number()){
+            result.push_back(cards[0]);
+            result.push_back(cards[1]);
+        }
+        if(cards[1].get_number()==cards[2].get_number()&&cards[3].get_number()==cards[4].get_number()){
+            result.push_back(cards[1]);
+            result.push_back(cards[2]);
+        }
+        if(cards[0].get_number()==cards[1].get_number()&&cards[3].get_number()==cards[4].get_number()){
+            result.push_back(cards[0]);
+            result.push_back(cards[1]);
+        }
+    }
     return result;
 }

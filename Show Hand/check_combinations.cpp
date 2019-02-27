@@ -86,5 +86,34 @@ bool check_three_of_kind_only(vector<Card> cards){
     if(cards[2].get_number()==cards[3].get_number()&&cards[3].get_number()==cards[4].get_number()) return true;
     }
     return false;
-
 }
+
+
+bool check_two_pairs_only(vector<Card> cards){
+    sort_in_order(cards);
+    //44556
+    //45566
+    //44566
+    if(!check_full_house(cards)){
+        if(cards[0].get_number()==cards[1].get_number()&&cards[2].get_number()==cards[3].get_number())return true;
+        if(cards[1].get_number()==cards[2].get_number()&&cards[3].get_number()==cards[4].get_number())return true;
+        if(cards[0].get_number()==cards[1].get_number()&&cards[3].get_number()==cards[4].get_number())return true;
+    }
+    return false;
+}
+
+bool check_one_pair_only(vector<Card> cards){
+    sort_in_order(cards);
+    if(!check_four_of_kind(cards)&&!check_full_house(cards)&&!check_two_pairs_only(cards)){
+        //44567
+        //45567
+        //45667
+        //45677
+        if(cards[0].get_number()==cards[1].get_number())return true;
+        if(cards[1].get_number()==cards[2].get_number())return true;
+        if(cards[2].get_number()==cards[3].get_number())return true;
+        if(cards[3].get_number()==cards[4].get_number())return true;
+    }
+    return false;
+}
+

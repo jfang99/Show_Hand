@@ -47,3 +47,9 @@ So briefly speaking, I will keep working on my previous project, but quite a bit
 2019/2/25
 I wrote the algorithm and corresponding helper functions for checking "royal flush" "straight flush" "four of a kind" "full house" "flush" "straight" "three of a kind".
 The remaining ones are "two pair" "one pair" "high card".
+
+2019/2/26
+I searched for the algorithm to find a "pair" in five cards:
+https://gamedev.stackexchange.com/questions/49302/determining-poker-hands
+It turns out to be not so efficient, so I modified it a little bit.
+

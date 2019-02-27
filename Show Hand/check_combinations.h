@@ -17,4 +17,8 @@ bool check_flush(vector<Card>cards);
 bool check_straight(vector<Card> cards);
 
 bool check_three_of_kind_only(vector<Card> cards);
+
+bool check_two_pairs_only(vector<Card> cards);
+
+bool check_one_pair_only(vector<Card> cards);
 #endif /* check_combinations_h */

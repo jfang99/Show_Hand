@@ -40,4 +40,8 @@ vector<Card> get_two(vector<Card> cards);
 
 vector<Card> get_three_only(vector<Card> cards);
 
+vector<Card> get_larger_pair(vector<Card> cards);
+
+vector<Card> get_smaller_pair(vector<Card> cards);
+
 #endif /* Compare_h */
