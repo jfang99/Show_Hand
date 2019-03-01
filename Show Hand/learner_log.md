@@ -53,3 +53,5 @@ I searched for the algorithm to find a "pair" in five cards:
 https://gamedev.stackexchange.com/questions/49302/determining-poker-hands
 It turns out to be not so efficient, so I modified it a little bit.
 
+2019/3/1
+I finished all comparison functions. The next to do is: finish the class "Person" which is player in the game.
