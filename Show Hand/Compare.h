@@ -10,7 +10,8 @@
 #include<vector>
 using std::vector;
 
-//bool Compare(const vector<Card>& card1, const vector<Card>& card2);
+bool operator >( vector<Card> card1,  vector<Card> card2);
+bool operator ==( vector<Card> card1,  vector<Card> card2);
 
 
 
@@ -44,4 +45,5 @@ vector<Card> get_larger_pair(vector<Card> cards);
 
 vector<Card> get_smaller_pair(vector<Card> cards);
 
+vector<Card> get_only_pair(vector<Card> cards);
 #endif /* Compare_h */

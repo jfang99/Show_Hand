@@ -3,8 +3,8 @@
 
 using std::vector;
 
+//To decide the winner:
 bool operator >( vector<Card> card1,  vector<Card> card2){
-    //psudocode
     int a=transf_cards_to_int(card1);
     int b=transf_cards_to_int(card2);
     
@@ -60,7 +60,6 @@ bool operator >( vector<Card> card1,  vector<Card> card2){
         
         //if three of a kind:
         else if(a==4){
-            //note: this is reusing get_three:
             vector<Card> carda=get_three_only(card1);
             vector<Card> cardb=get_three_only(card2);
             if(carda[0].get_number()>cardb[0].get_number())return true;
@@ -83,16 +82,37 @@ bool operator >( vector<Card> card1,  vector<Card> card2){
         
         //if one pair:
         else if(a==2){
-            
+            vector<Card> carda=get_only_pair(card1);
+            vector<Card> cardb=get_only_pair(card2);
+            if(carda[0].get_number()>cardb[0].get_number())return true;
+        }
+        //if high cards:
+        else{
+            return card1[4].get_number()>card2[4].get_number();
         }
     }
     return false;
     }
         
 
-
-
-
+//To decide a tie:
+bool operator ==( vector<Card> card1,  vector<Card> card2){
+    int a=transf_cards_to_int(card1);
+    int b=transf_cards_to_int(card2);
+    
+    if(a>b)return false;
+    else if(a<b)return false;
+    else if(a==b){
+        sort_in_order(card1);
+        sort_in_order(card2);
+        //every card has to be the same:
+        for(int i=0;i<4;i++){
+            if(card1[i].get_number()!=card2[i].get_number())return false;
+        }
+    return false;
+}
+    return false;
+}
 
 
 
@@ -109,7 +129,6 @@ bool operator >( vector<Card> card1,  vector<Card> card2){
 //Two pair = 3
 //One pair = 2
 //High card = 1
-
 int transf_cards_to_int(vector<Card> cards){
     //check if contains royal flush:
     if(check_royal_flush(cards)){
@@ -139,7 +158,8 @@ int transf_cards_to_int(vector<Card> cards){
     if(check_one_pair_only(cards)){
         return 2;
     }
-    return 0;
+    //if (high_cards):
+    return 1;
 }
 
 
@@ -318,6 +338,19 @@ vector<Card> get_smaller_pair(vector<Card> cards){
         if(cards[0].get_number()==cards[1].get_number()&&cards[3].get_number()==cards[4].get_number()){
             result.push_back(cards[0]);
             result.push_back(cards[1]);
+        }
+    }
+    return result;
+}
+
+vector<Card> get_only_pair(vector<Card> cards){
+    vector<Card> result;
+    if(check_one_pair_only(cards)){
+        for(int i=0;i<3;i++){
+            if(cards[i].get_number()==cards[i+1].get_number()){
+                result.push_back(cards[i]);
+                result.push_back(cards[i+1]);
+            }
         }
     }
     return result;
