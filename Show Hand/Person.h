@@ -15,8 +15,10 @@
 using namespace std;
 
 class Person:public Card{
-public:
+protected:
     vector<Card> cards;
+public:
+   void add_card(Card card);
     
 };
 
