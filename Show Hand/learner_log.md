@@ -53,5 +53,9 @@ I searched for the algorithm to find a "pair" in five cards:
 https://gamedev.stackexchange.com/questions/49302/determining-poker-hands
 It turns out to be not so efficient, so I modified it a little bit.
 
+2019/3/1
+I finished all comparison functions. The next to do is: finish the class "Person" which is player in the game.
 
-
+2019/3/4
+I'm switching to graphics part now. The first goal is to figure out how to switch between windows. This is tutorial:
+https://www.google.com/search?q=how+to+swich+between+mainwindows+Qt&oq=how+to+swich+between++mainwindows+Qt&aqs=chrome..69i57.12630j0j4&sourceid=chrome&ie=UTF-8#kpvalbx=1
