@@ -63,3 +63,10 @@ https://www.qtcentre.org/threads/31343-Switching-between-2-Forms
 
 I also learned how to add image in Qt designer:
 https://www.josephrex.me/adding-resource-files-to-your-qt-designer-project-and-using-pyrcc-with-python/
+
+2019/3/5
+I learned how to solve the conflicts when I included two header files in each other:
+http://www.cplusplus.com/forum/general/82427/
+
+How to change color,font,size of Qlabel:
+https://stackoverflow.com/questions/2749798/qlabel-set-color-of-text-and-background

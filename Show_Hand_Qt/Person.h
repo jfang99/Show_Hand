@@ -19,9 +19,9 @@ protected:
     vector<Card> cards;
     int money;
 public:
-    Person(){cards.resize(5);money=1000;}
+    Person();
     
-   void add_card(Card card);
+    void add_card(Card card);
 
 };
 

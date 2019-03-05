@@ -14,13 +14,10 @@ class startwindow : public QMainWindow
 public:
     explicit startwindow(QWidget *parent = nullptr);
     ~startwindow();
+
 public slots:
-    void displaygame(){
-        this->hide();
-        showhand=new Show_Hand();
-        showhand->show();
-        return;
-    }
+    void displaygame();
+
 private:
     Ui::startwindow *ui;
     Show_Hand* showhand;

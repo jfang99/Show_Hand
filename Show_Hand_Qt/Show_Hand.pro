@@ -27,11 +27,15 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         show_hand.cpp \
-    startwindow.cpp
+    startwindow.cpp \
+    Card.cpp \
+    Person.cpp
 
 HEADERS += \
         show_hand.h \
-    startwindow.h
+    startwindow.h \
+    Card.h \
+    Person.h
 
 FORMS += \
         show_hand.ui \
