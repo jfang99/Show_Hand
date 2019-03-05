@@ -59,3 +59,7 @@ I finished all comparison functions. The next to do is: finish the class "Person
 2019/3/4
 I'm switching to graphics part now. The first goal is to figure out how to switch between windows. This is tutorial:
 https://www.google.com/search?q=how+to+swich+between+mainwindows+Qt&oq=how+to+swich+between++mainwindows+Qt&aqs=chrome..69i57.12630j0j4&sourceid=chrome&ie=UTF-8#kpvalbx=1
+https://www.qtcentre.org/threads/31343-Switching-between-2-Forms
+
+I also learned how to add image in Qt designer:
+https://www.josephrex.me/adding-resource-files-to-your-qt-designer-project-and-using-pyrcc-with-python/
