@@ -70,3 +70,6 @@ http://www.cplusplus.com/forum/general/82427/
 
 How to change color,font,size of Qlabel:
 https://stackoverflow.com/questions/2749798/qlabel-set-color-of-text-and-background
+
+Conversion of QString and int:
+https://stackoverflow.com/questions/16633555/how-to-convert-qstring-to-int

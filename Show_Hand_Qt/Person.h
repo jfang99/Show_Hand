@@ -18,11 +18,22 @@ class Person:public Card{
 protected:
     vector<Card> cards;
     int money;
+    int bid;
 public:
     Person();
-    
+    void add_bid();
+    void set_bid(int a);
+    int get_bid() const;
     void add_card(Card card);
+    int get_money() const;
+    void decrease_money();
+    void set_money(int a);
 
+    string get_suit();
+    string get_rank();
+
+    void face_down();
+    int handsize();
 };
 
 #endif /* Person_hpp */

@@ -30,6 +30,7 @@ private:
     string rank;
     //number is used to represent the order of the card,while rank represents
     int number;
+    bool facedown;
 public:
     //the member functions:
     //Constructors:
@@ -40,6 +41,7 @@ public:
     string get_rank() const;
     int get_number() const;
     void set_number(int a);
+    void face_it_down();
 
 };
 

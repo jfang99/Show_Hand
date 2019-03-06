@@ -7,6 +7,7 @@ Card::Card(){
     suit="";
     rank="";
     number = 0;
+    facedown=false;
     
 }
 
@@ -62,6 +63,9 @@ void Card::set_number(int a){
     number=a;
 }
 
+void Card::face_it_down(){
+    facedown=true;
+}
 
 //Non-member functions:
 ostream& operator<<(ostream& out, const Card& card){
