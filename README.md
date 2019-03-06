@@ -1,6 +1,7 @@
 # Show_Hand
 This is Show Hand Poker game with C++ language.
 (All the codes are home-made because no code of this game can be found online. )
+("GAME" is just a mirror directory of "Show_Hand_Qt".
 
 # This is a link to a brief introduction of the game:
 https://en-betfair.custhelp.com/app/answers/detail/a_id/5954/~/poker%3A-how-to-play-5-card-stud
@@ -60,4 +61,4 @@ https://www.cardplayer.com/rules-of-poker/hand-rankings
 [Link to my game](./GAME/)
 
 # This file contains all my learning process records.
-[Link to my learning process records](./Show_Hand_Command_Line/learner_log.md/)
+[Link to my learning process records](./Show Hand/learner_log.md/)
