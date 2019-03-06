@@ -78,8 +78,11 @@ https://stackoverflow.com/questions/16633555/how-to-convert-qstring-to-int
 
 Things I learned working on the final project:
 1) Don't start working on a CS project until you have a concrete plan for it.
-I basically just took one step at a time when working on the project, so I always felt perplexed in the midway.
+I basically just took one step at a time when working on the project, so I always felt perplexed in the midway and had to switch from Texas Poker to Show Hand. 
 2) It's always helpful to write psudo code first.
+
+# conclusion:
+I wrote most logics without referencing online resources, but I learned a lot of techniques about Qt creator, such as interacting between Ui's, connecting singal and slot, etc. Meanwhile, this project is a good revision of things I leanred in Pic 10A and Pic 10B. 
 
 
 

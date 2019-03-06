@@ -1,5 +1,6 @@
 # Show_Hand
 This is Show Hand Poker game with C++ language.
+(All the codes are home-made because no code of this game can be found online. )
 
 # This is a link to a brief introduction of the game:
 https://en-betfair.custhelp.com/app/answers/detail/a_id/5954/~/poker%3A-how-to-play-5-card-stud
@@ -50,13 +51,13 @@ https://www.cardplayer.com/rules-of-poker/hand-rankings
 1. If one player has higher bid than the other, then only the player with lower bid can press "CHECK".
 2. If two players' bids are the same and no one wants to add bid, then either player can press "CHECK".
 3. Don't press "AGAIN" until the game ends - there's a winner or a tie.
-
+4. Can't add bid in the final round.
 
 
 
 
 # Here's the link to the actual game: (run it in Qt Creator)
-[Link to my game: ](./Show_Hand/)
+[Link to my game: ](./Show_Hand_Qt/)
 
 # This file contains all my learning process records.
 [Link to my learning process records](Show_Hand/learner_log.md/)
