@@ -29,13 +29,17 @@ SOURCES += \
         show_hand.cpp \
     startwindow.cpp \
     Card.cpp \
-    Person.cpp
+    Person.cpp \
+    check_combinations.cpp \
+    Compare.cpp
 
 HEADERS += \
         show_hand.h \
     startwindow.h \
     Card.h \
-    Person.h
+    Person.h \
+    check_combinations.h \
+    Compare.h
 
 FORMS += \
         show_hand.ui \

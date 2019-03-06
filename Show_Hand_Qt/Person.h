@@ -34,6 +34,8 @@ public:
 
     void face_down();
     int handsize();
+    void resize();
+    vector<Card> get_hand();
 };
 
 #endif /* Person_hpp */

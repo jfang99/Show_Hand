@@ -57,3 +57,12 @@
  int Person::handsize(){
      return cards.size();
  }
+
+ void Person::resize(){
+     cards.resize(0);
+     return;
+ }
+
+ vector<Card> Person::get_hand(){
+     return cards;
+ }

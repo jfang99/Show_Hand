@@ -3,6 +3,8 @@
 #include"startwindow.h"
 #include"Card.h"
 #include"Person.h"
+#include"Compare.h"
+#include"check_combinations.h"
 
 #include<QString>
 #include<QLabel>
@@ -18,8 +20,8 @@ Show_Hand::Show_Hand(QWidget *parent) :
     ui->setupUi(this);
     create_deck(deck);
     //random shuffle needed.Don't worry about it now....
-    gameend=false;
-    roundend=false;
+
+    round=2;
     bid_pot=0;
     person1=Person();
     person2=Person();
@@ -42,7 +44,7 @@ Show_Hand::Show_Hand(QWidget *parent) :
     QObject::connect(ui->raise2,SIGNAL(clicked()),this,SLOT(person2_add_bid()));
     QObject::connect(ui->check1,SIGNAL(clicked()),this,SLOT(a_round()));
     QObject::connect(ui->check2,SIGNAL(clicked()),this,SLOT(a_round()));
-
+    QObject::connect(ui->again,SIGNAL(clicked()),this,SLOT(startover()));
 
     //first round:
     //one face down card:
@@ -207,21 +209,53 @@ void Show_Hand::startover(){
     ui->rank5->clear();ui->rank6->clear();ui->rank7->clear();ui->rank8->clear();
     ui->rank9->clear();ui->rank10->clear();
 
-    gameend=true;
-    roundend=true;
-    if(person1.get_money()==0||person2.get_money()==0)end=true;
+    person1.resize();
+    person2.resize();
+
+    if(person1.get_money()!=0||person2.get_money()!=0){
+        distribute_first();
+
+       distribute_person1();
+       distribute_person2();
+    }
+    round=2;
     return;
 }
 
 void Show_Hand::a_round(){
+    round++;
     if(person1.get_bid()>person2.get_bid()){
         person2.set_bid(person1.get_bid());
         ui->bid2->setText(QString::number(person2.get_bid()));
     }
     else{person1.set_bid(person2.get_bid());ui->bid1->setText(QString::number(person1.get_bid()));}
     bid_pot=person1.get_bid()+person2.get_bid();
+
     distribute_person1();
     distribute_person2();
+
+    if(round==5){
+
+        if(person1.get_hand()>person2.get_hand()){
+            person1win();
+            ui->winner->setText("winner is player1!!!!");
+            ui->winner->setStyleSheet("QLabel{color:red;}");
+        }
+        if(person2.get_hand()>person1.get_hand()){
+            person2win();
+            ui->winner->setText("winner is player2!!!!");
+            ui->winner->setStyleSheet("QLabel{color:red;}");
+        }
+        if(person1.get_hand()==person2.get_hand()){
+            person1.set_money(person1.get_money()+person1.get_bid());
+            person2.set_money(person2.get_money()+person2.get_bid());
+            ui->money1->setText(QString::number(person1.get_money()));
+            ui->money2->setText(QString::number(person2.get_money()));
+            ui->winner->setText("It's a tie!!!!");
+        }
+
+
+    }
 
 return;
 }
