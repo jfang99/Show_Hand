@@ -203,7 +203,10 @@ void Show_Hand::startover(){
     ui->bid2->setText(QString::number(0));
     person1.set_bid(0);
     person2.set_bid(0);
-    bid_pot=0;
+    int random=rand()%10;
+    if(random>=5) {ui->bid1->setText(QString::number(10)); person1.set_bid(10);person1.set_money(person1.get_money()-10);ui->money1->setText(QString::number(person1.get_money()));}
+    else{ui->bid2->setText(QString::number(10)); person2.set_bid(10);person2.set_money(person2.get_money()-10);ui->money2->setText(QString::number(person2.get_money()));}
+    bid_pot=10;
 
     ui->suit1->clear();ui->suit2->clear();ui->suit3->clear();ui->suit4->clear();
     ui->suit5->clear();ui->suit6->clear();ui->suit7->clear();ui->suit8->clear();
@@ -232,10 +235,17 @@ void Show_Hand::startover(){
 void Show_Hand::a_round(){
     round++;
     if(person1.get_bid()>person2.get_bid()){
+        person2.set_money(person2.get_money()-(person1.get_bid()-person2.get_bid()));
+        ui->money2->setText(QString::number(person2.get_money()));
         person2.set_bid(person1.get_bid());
         ui->bid2->setText(QString::number(person2.get_bid()));
+
     }
-    else{person1.set_bid(person2.get_bid());ui->bid1->setText(QString::number(person1.get_bid()));}
+    else{
+        person1.set_money(person1.get_money()-(person2.get_bid()-person1.get_bid()));
+        ui->money1->setText(QString::number(person1.get_money()));
+        person1.set_bid(person2.get_bid());ui->bid1->setText(QString::number(person1.get_bid()));}
+
     bid_pot=person1.get_bid()+person2.get_bid();
 
     distribute_person1();
