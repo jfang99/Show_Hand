@@ -12,6 +12,8 @@
 #include<ctime>
 #include<QObject>
 
+using namespace std;
+
 Show_Hand::Show_Hand(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Show_Hand)
@@ -19,7 +21,8 @@ Show_Hand::Show_Hand(QWidget *parent) :
     srand(time(0));
     ui->setupUi(this);
     create_deck(deck);
-    //random shuffle needed.Don't worry about it now....
+    //random shuffle needed.
+    random_shuffle(deck.begin(),(deck.end()));
 
     round=2;
     bid_pot=0;
@@ -45,7 +48,8 @@ Show_Hand::Show_Hand(QWidget *parent) :
     QObject::connect(ui->check1,SIGNAL(clicked()),this,SLOT(a_round()));
     QObject::connect(ui->check2,SIGNAL(clicked()),this,SLOT(a_round()));
     QObject::connect(ui->again,SIGNAL(clicked()),this,SLOT(startover()));
-
+    QObject::connect(ui->visible1,SIGNAL(clicked()),this,SLOT(visible1()));
+    QObject::connect(ui->visible2,SIGNAL(clicked()),this,SLOT(visible2()));
     //first round:
     //one face down card:
     distribute_first();
@@ -125,20 +129,20 @@ void Show_Hand::person2_add_bid(){
 void Show_Hand::distribute_person1(){
     person1.add_card(deck[deck.size()-1]);
     if(person1.handsize()==2){
-    ui->suit2->setText(QString::fromStdString(person1.get_suit()));
-    ui->rank2->setText(QString::fromStdString(person1.get_rank()));
+    ui->suit7->setText(QString::fromStdString(person1.get_suit()));
+    ui->rank7->setText(QString::fromStdString(person1.get_rank()));
     }
     else if(person1.handsize()==3){
-        ui->suit3->setText(QString::fromStdString(person1.get_suit()));
-        ui->rank3->setText(QString::fromStdString(person1.get_rank()));
+        ui->suit8->setText(QString::fromStdString(person1.get_suit()));
+        ui->rank8->setText(QString::fromStdString(person1.get_rank()));
         }
     else if(person1.handsize()==4){
-        ui->suit4->setText(QString::fromStdString(person1.get_suit()));
-        ui->rank4->setText(QString::fromStdString(person1.get_rank()));
+        ui->suit9->setText(QString::fromStdString(person1.get_suit()));
+        ui->rank9->setText(QString::fromStdString(person1.get_rank()));
         }
     else if(person1.handsize()==5){
-        ui->suit5->setText(QString::fromStdString(person1.get_suit()));
-        ui->rank5->setText(QString::fromStdString(person1.get_rank()));
+        ui->suit10->setText(QString::fromStdString(person1.get_suit()));
+        ui->rank10->setText(QString::fromStdString(person1.get_rank()));
         }
     deck.pop_back();
     return;
@@ -147,20 +151,20 @@ void Show_Hand::distribute_person1(){
 void Show_Hand::distribute_person2(){
     person2.add_card(deck[deck.size()-1]);
     if(person2.handsize()==2){
-    ui->suit7->setText(QString::fromStdString(person2.get_suit()));
-    ui->rank7->setText(QString::fromStdString(person2.get_rank()));
+    ui->suit2->setText(QString::fromStdString(person2.get_suit()));
+    ui->rank2->setText(QString::fromStdString(person2.get_rank()));
     }
     else if(person2.handsize()==3){
-        ui->suit8->setText(QString::fromStdString(person2.get_suit()));
-        ui->rank8->setText(QString::fromStdString(person2.get_rank()));
+        ui->suit3->setText(QString::fromStdString(person2.get_suit()));
+        ui->rank3->setText(QString::fromStdString(person2.get_rank()));
         }
     else if(person2.handsize()==4){
-        ui->suit9->setText(QString::fromStdString(person2.get_suit()));
-        ui->rank9->setText(QString::fromStdString(person2.get_rank()));
+        ui->suit4->setText(QString::fromStdString(person2.get_suit()));
+        ui->rank4->setText(QString::fromStdString(person2.get_rank()));
         }
     else if(person2.handsize()==5){
-        ui->suit10->setText(QString::fromStdString(person2.get_suit()));
-        ui->rank10->setText(QString::fromStdString(person2.get_rank()));
+        ui->suit5->setText(QString::fromStdString(person2.get_suit()));
+        ui->rank5->setText(QString::fromStdString(person2.get_rank()));
         }
     deck.pop_back();
     return;
@@ -169,13 +173,13 @@ void Show_Hand::distribute_person2(){
 void Show_Hand::distribute_first(){
     person1.add_card(deck[deck.size()-1]);
     deck.pop_back();
-    ui->suit1->setText(QString::fromStdString("N/A"));
-    ui->rank1->setText(QString::fromStdString("N/A"));
+    ui->suit6->setText(QString::fromStdString("N/A"));
+    ui->rank6->setText(QString::fromStdString("N/A"));
     person1.face_down();
     person2.add_card(deck[deck.size()-1]);
     deck.pop_back();
-    ui->suit6->setText(QString::fromStdString("N/A"));
-    ui->rank6->setText(QString::fromStdString("N/A"));
+    ui->suit1->setText(QString::fromStdString("N/A"));
+    ui->rank1->setText(QString::fromStdString("N/A"));
     person2.face_down();
     return;
 }
@@ -209,6 +213,7 @@ void Show_Hand::startover(){
     ui->rank5->clear();ui->rank6->clear();ui->rank7->clear();ui->rank8->clear();
     ui->rank9->clear();ui->rank10->clear();
 
+    ui->winner->clear();
     person1.resize();
     person2.resize();
 
@@ -237,12 +242,14 @@ void Show_Hand::a_round(){
     if(round==5){
 
         if(person1.get_hand()>person2.get_hand()){
-            person1win();
+            person1.set_money(person1.get_money()+bid_pot);
+            ui->money1->setText(QString::number(person1.get_money()));
             ui->winner->setText("winner is player1!!!!");
             ui->winner->setStyleSheet("QLabel{color:red;}");
         }
         if(person2.get_hand()>person1.get_hand()){
-            person2win();
+            person2.set_money(person2.get_money()+bid_pot);
+            ui->money2->setText(QString::number(person2.get_money()));
             ui->winner->setText("winner is player2!!!!");
             ui->winner->setStyleSheet("QLabel{color:red;}");
         }
@@ -252,12 +259,37 @@ void Show_Hand::a_round(){
             ui->money1->setText(QString::number(person1.get_money()));
             ui->money2->setText(QString::number(person2.get_money()));
             ui->winner->setText("It's a tie!!!!");
+            ui->winner->setStyleSheet("QLabel{color:red;}");
         }
 
 
     }
 
 return;
+}
+
+void Show_Hand::visible1(){
+    if(ui->suit6->text()=="N/A"){
+        ui->suit6->setText(QString::fromStdString((person1.get_hand())[0].get_suit()));
+        ui->rank6->setText(QString::fromStdString((person1.get_hand())[0].get_rank()));
+    }
+    else{
+         ui->suit6->setText("N/A");
+         ui->rank6->setText("N/A");
+    }
+    return;
+}
+
+void Show_Hand::visible2(){
+    if(ui->suit1->text()=="N/A"){
+        ui->suit1->setText(QString::fromStdString((person2.get_hand())[0].get_suit()));
+        ui->rank1->setText(QString::fromStdString((person2.get_hand())[0].get_rank()));
+    }
+    else{
+         ui->suit1->setText("N/A");
+         ui->rank1->setText("N/A");
+    }
+    return;
 }
 
 Show_Hand::~Show_Hand()

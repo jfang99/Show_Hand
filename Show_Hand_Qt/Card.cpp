@@ -76,7 +76,7 @@ out<<card.get_suit()<<card.get_rank()<<endl;
 
 //create a deck:
 void create_deck(vector<Card>& cards){
-    for(int i=0;i<13;i++){
+    for(int i=1;i<13;i++){
     cards.push_back(Card("\u2660",i));
     cards.push_back(Card("\u2661",i));
     cards.push_back(Card("\u2662",i));

@@ -38,6 +38,8 @@ public slots:
     void person2win();
     void a_round();
     void startover();
+    void visible1();
+    void visible2();
 
 private:
     Ui::Show_Hand *ui;
