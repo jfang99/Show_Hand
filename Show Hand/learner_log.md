@@ -73,3 +73,14 @@ https://stackoverflow.com/questions/2749798/qlabel-set-color-of-text-and-backgro
 
 Conversion of QString and int:
 https://stackoverflow.com/questions/16633555/how-to-convert-qstring-to-int
+
+# I spent more than 10 hours on the final project today, and I finally finished it. I will then work on looking for bugs. 
+
+Things I learned working on the final project:
+1) Don't start working on a CS project until you have a concrete plan for it.
+I basically just took one step at a time when working on the project, so I always felt perplexed in the midway.
+2) It's always helpful to write psudo code first.
+
+
+
+

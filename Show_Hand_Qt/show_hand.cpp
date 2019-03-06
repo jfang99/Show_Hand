@@ -218,6 +218,8 @@ void Show_Hand::startover(){
     person2.resize();
 
     if(person1.get_money()!=0||person2.get_money()!=0){
+        create_deck(deck);
+        random_shuffle(deck.begin(),(deck.end()));
         distribute_first();
 
        distribute_person1();
