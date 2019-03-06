@@ -1,7 +1,7 @@
 # Show_Hand
 This is Show Hand Poker game with C++ language.
 (All the codes are home-made because no code of this game can be found online. )
-("GAME" is just a mirror directory of "Show_Hand_Qt".
+Notice: "GAME" is just a mirror directory of "Show_Hand_Qt".
 
 # This is a link to a brief introduction of the game:
 https://en-betfair.custhelp.com/app/answers/detail/a_id/5954/~/poker%3A-how-to-play-5-card-stud
