@@ -61,4 +61,4 @@ https://www.cardplayer.com/rules-of-poker/hand-rankings
 [Link to my game](./GAME/)
 
 # This file contains all my learning process records.
-[Link to my learning process records](./Show Hand/learner_log.md/)
+[Link to my learning process records](./learner_log.md/)
