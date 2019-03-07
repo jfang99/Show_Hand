@@ -51,7 +51,7 @@ https://www.cardplayer.com/rules-of-poker/hand-rankings
 # Notice for player of my game:
 1. If one player has higher bid than the other, then only the player with lower bid can press "CHECK".
 2. If two players' bids are the same and no one wants to add bid, then either player can press "CHECK".
-3. Don't press "AGAIN" until the game ends - there's a winner or a tie.
+3. Don't press "AGAIN" until the game ends - i.e. there's a winner or a tie.
 4. Can't add bid in the final round.
 
 
