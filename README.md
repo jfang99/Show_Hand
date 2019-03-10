@@ -25,7 +25,7 @@ The winner is the player who has the best hand showing.
 # Here's the rule for playing my Show_Hand game:
 There are two players. Each one has 1000 dollars initially.
 (First round) Each one is dealt two cards - one face down (N/A) & one face up. 
-Both players should "peak at" their face-down card by pressing "VISIBLE1" or "VISIBLE2". (They cannot see each other's face-down card)
+Both players should "peek at" their face-down card by pressing "VISIBLE1" or "VISIBLE2" button. (They cannot see each other's faced-down card)
 One of player is randomly chosen to take initial bid - 10 dollars.
 The other player take action first (action includes: FOLD, CHECK, RAISE)
 

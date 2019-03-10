@@ -256,14 +256,18 @@ void Show_Hand::a_round(){
         if(person1.get_hand()>person2.get_hand()){
             person1.set_money(person1.get_money()+bid_pot);
             ui->money1->setText(QString::number(person1.get_money()));
-            ui->winner->setText("winner is player1!!!!");
+            QString message="Winner is "+(ui->player1->text())+" !!!!";
+            ui->winner->setText(message);
             ui->winner->setStyleSheet("QLabel{color:red;}");
+            visible1();visible2();
         }
         if(person2.get_hand()>person1.get_hand()){
             person2.set_money(person2.get_money()+bid_pot);
             ui->money2->setText(QString::number(person2.get_money()));
-            ui->winner->setText("winner is player2!!!!");
+            QString message="Winner is "+ (ui->player2->text())+" !!!!";
+            ui->winner->setText(message);
             ui->winner->setStyleSheet("QLabel{color:red;}");
+            visible1();visible2();
         }
         if(person1.get_hand()==person2.get_hand()){
             person1.set_money(person1.get_money()+person1.get_bid());
@@ -272,6 +276,7 @@ void Show_Hand::a_round(){
             ui->money2->setText(QString::number(person2.get_money()));
             ui->winner->setText("It's a tie!!!!");
             ui->winner->setStyleSheet("QLabel{color:red;}");
+            visible1();visible2();
         }
 
 
