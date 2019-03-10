@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Show Hand</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTextEdit" name="textEdit">
@@ -125,6 +125,16 @@
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionShow_Hand">
+   <property name="text">
+    <string>Show Hand</string>
+   </property>
+  </action>
+  <action name="actions">
+   <property name="text">
+    <string>s</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
