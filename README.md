@@ -60,5 +60,8 @@ https://www.cardplayer.com/rules-of-poker/hand-rankings
 # Here's the link to the actual game: (run it in Qt Creator)
 [Link to my game](./GAME/)
 
+# Here are snapshots to show the game works.
+[Link to snapshots](./Snapshots_of_the_game)
+
 # This file contains all my learning process records.
 [Link to my learning process records](./learner_log.md/)
