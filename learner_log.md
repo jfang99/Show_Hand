@@ -1,4 +1,4 @@
-This is the readme for command line files.
+This is the record of my learning process.
 
 2019/2/8
 In order to have a very basic idea of how to start, I first looked at a list of files of a completed Texas Hold’em Poker project. Here’s the link:
@@ -11,7 +11,7 @@ http://www.cplusplus.com/forum/general/187685/
 I found that I mistook Texas Hold’em Poker with a Chinese poker game called “show hand”, so I just learned how to play Texas Hold’em Poker. The rules are different in some way, but they are also similar. 
 
 2019/2/14
-I reviewed the selection sort learned in pic10b and used it in one of my helper function. 
+I reviewed the "selection sort" learned in pic10b and used it in one of my helper function. 
 https://www.toptal.com/developers/sorting-algorithms/selection-sort
 
 2019/2/15
@@ -39,10 +39,10 @@ Note: I realized that the reason why cpp file needs a header file is that we don
 Note to myself: always call "check_sequence" before "get_sequence".
 
 2019/2/18
-I was competing in "Hack on Hill" yesterday so I didn't have any progress yesterday.
+I was competing in "Hackathon on Hill" yesterday so I didn't have any progress yesterday.
 # Today I've changed my mind to switch the topic of my project from "Texas Hold'em Poker" to "Show Hand".
-The reason is that Texas Hold'em Poker's algorithm is too complex and takes most of the time to work on the algorithm part. However, since I want to learn some new techniques, I don't want to spend too much time on algorithm. Therefore, I've switched to a similar Chinese poker game "Show Hand". Their rules are basically the same, but "Show Hand"'s maximum card size is 5 while "Texas Hold'em Poker" is 7. This little difference makes a lot of differences in the work load. For example, I don't need the function "get_largest_sequence" because there could only be one sequence in "Show Hand"! 
-So briefly speaking, I will keep working on my previous project, but quite a bit of changes need to be made.
+The reason is that Texas Hold'em Poker's algorithm is too complex and takes most of the time to work on the algorithm part. However, since I want to learn some new techniques of Qt, I don't want to spend too much time on algorithm. Therefore, I've switched to a similar Chinese poker game "Show Hand". Their rules are basically the same, but "Show Hand"'s maximum card size is 5 while "Texas Hold'em Poker" is 7. This little difference makes a lot of differences in the work load. For example, I don't need the function "get_largest_sequence" because there could only be one sequence in "Show Hand"! 
+So briefly speaking, I will keep working on my previous project, but quite a lot of changes need to be made.
 
 2019/2/25
 I wrote the algorithm and corresponding helper functions for checking "royal flush" "straight flush" "four of a kind" "full house" "flush" "straight" "three of a kind".
@@ -65,7 +65,7 @@ I also learned how to add image in Qt designer:
 https://www.josephrex.me/adding-resource-files-to-your-qt-designer-project-and-using-pyrcc-with-python/
 
 2019/3/5
-I learned how to solve the conflicts when I included two header files in each other:
+I learned how to solve the conflicts when I tried to include two header files in each other:
 http://www.cplusplus.com/forum/general/82427/
 
 How to change color,font,size of Qlabel:
@@ -74,6 +74,9 @@ https://stackoverflow.com/questions/2749798/qlabel-set-color-of-text-and-backgro
 Conversion of QString and int:
 https://stackoverflow.com/questions/16633555/how-to-convert-qstring-to-int
 
+I also learned how to make two ui interfaces interact with each other with the help of our TA.
+For example, in my project, I need to change the player's name on the game ui interface based on what the user typed in on the startwindow ui interface. 
+
 # I spent more than 10 hours on the final project today, and I finally finished it. I will then work on looking for bugs. 
 
 Things I learned working on the final project:
@@ -81,9 +84,12 @@ Things I learned working on the final project:
 I basically just took one step at a time when working on the project, so I always felt perplexed in the midway and had to switch from Texas Poker to Show Hand. 
 2) It's always helpful to write psudo code first.
 
-# conclusion:
+# Conclusion:
+The difficult part of this final project is:
+1) Algorithms for comparing two hands.
+2) Learning Qt creator.
 I wrote most logics without referencing online resources, but I learned a lot of techniques about Qt creator, such as interacting between Ui's, connecting singal and slot, etc. Meanwhile, this project is a good revision of things I leanred in Pic 10A and Pic 10B. 
 
-
+Note: Later changes won't be recorded in this file; instead, they can be easily found in the commit histories.
 
 
